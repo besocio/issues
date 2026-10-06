@@ -1,0 +1,478 @@
+{
+  "id": "_pb_users_auth_",
+  "listRule": "@request.auth.id != \"\" && (id = @request.auth.id || @request.auth.is_admin = true || (verified = true && banned != true && shadowbanned != true))",
+  "viewRule": "id = @request.auth.id || @request.auth.is_admin = true || (verified = true && banned != true && shadowbanned != true)",
+  "createRule": "",
+  "updateRule": "id = @request.auth.id",
+  "deleteRule": "id = @request.auth.id",
+  "name": "users",
+  "type": "auth",
+  "fields": [
+    {
+      "autogeneratePattern": "[a-z0-9]{15}",
+      "help": "",
+      "hidden": false,
+      "id": "text3208210256",
+      "max": 15,
+      "min": 15,
+      "name": "id",
+      "pattern": "^[a-z0-9]+$",
+      "presentable": false,
+      "primaryKey": true,
+      "required": true,
+      "system": true,
+      "type": "text"
+    },
+    {
+      "cost": 0,
+      "help": "",
+      "hidden": true,
+      "id": "password901924565",
+      "max": 0,
+      "min": 8,
+      "name": "password",
+      "pattern": "",
+      "presentable": false,
+      "required": true,
+      "system": true,
+      "type": "password"
+    },
+    {
+      "autogeneratePattern": "[a-zA-Z0-9]{50}",
+      "help": "",
+      "hidden": true,
+      "id": "text2504183744",
+      "max": 60,
+      "min": 30,
+      "name": "tokenKey",
+      "pattern": "",
+      "presentable": false,
+      "primaryKey": false,
+      "required": true,
+      "system": true,
+      "type": "text"
+    },
+    {
+      "exceptDomains": null,
+      "help": "",
+      "hidden": false,
+      "id": "email3885137012",
+      "name": "email",
+      "onlyDomains": null,
+      "presentable": false,
+      "required": true,
+      "system": true,
+      "type": "email"
+    },
+    {
+      "help": "",
+      "hidden": false,
+      "id": "bool1547992806",
+      "name": "emailVisibility",
+      "presentable": false,
+      "required": false,
+      "system": true,
+      "type": "bool"
+    },
+    {
+      "help": "",
+      "hidden": false,
+      "id": "bool256245529",
+      "name": "verified",
+      "presentable": false,
+      "required": false,
+      "system": true,
+      "type": "bool"
+    },
+    {
+      "autogeneratePattern": "",
+      "help": "",
+      "hidden": false,
+      "id": "text1579384326",
+      "max": 255,
+      "min": 0,
+      "name": "name",
+      "pattern": "",
+      "presentable": false,
+      "primaryKey": false,
+      "required": true,
+      "system": false,
+      "type": "text"
+    },
+    {
+      "help": "",
+      "hidden": false,
+      "id": "file376926767",
+      "maxSelect": 1,
+      "maxSize": 0,
+      "mimeTypes": [
+        "image/jpeg",
+        "image/png",
+        "image/svg+xml",
+        "image/gif",
+        "image/webp"
+      ],
+      "name": "avatar",
+      "presentable": false,
+      "protected": false,
+      "required": false,
+      "system": false,
+      "thumbs": null,
+      "type": "file"
+    },
+    {
+      "hidden": false,
+      "id": "autodate2990389176",
+      "name": "created",
+      "onCreate": true,
+      "onUpdate": false,
+      "presentable": false,
+      "system": false,
+      "type": "autodate"
+    },
+    {
+      "hidden": false,
+      "id": "autodate3332085495",
+      "name": "updated",
+      "onCreate": true,
+      "onUpdate": true,
+      "presentable": false,
+      "system": false,
+      "type": "autodate"
+    },
+    {
+      "autogeneratePattern": "",
+      "help": "",
+      "hidden": false,
+      "id": "text4166911607",
+      "max": 30,
+      "min": 3,
+      "name": "username",
+      "pattern": "^[a-zA-Z0-9_]+$",
+      "presentable": false,
+      "primaryKey": false,
+      "required": true,
+      "system": false,
+      "type": "text"
+    },
+    {
+      "autogeneratePattern": "",
+      "help": "",
+      "hidden": false,
+      "id": "text3709889147",
+      "max": 500,
+      "min": 0,
+      "name": "bio",
+      "pattern": "",
+      "presentable": false,
+      "primaryKey": false,
+      "required": false,
+      "system": false,
+      "type": "text"
+    },
+    {
+      "exceptDomains": null,
+      "help": "",
+      "hidden": false,
+      "id": "url1198480871",
+      "name": "website",
+      "onlyDomains": null,
+      "presentable": false,
+      "required": false,
+      "system": false,
+      "type": "url"
+    },
+    {
+      "help": "",
+      "hidden": false,
+      "id": "date846843460",
+      "max": "",
+      "min": "",
+      "name": "last_seen",
+      "presentable": false,
+      "required": false,
+      "system": false,
+      "type": "date"
+    },
+    {
+      "help": "",
+      "hidden": false,
+      "id": "bool3304254982",
+      "name": "is_admin",
+      "presentable": false,
+      "required": false,
+      "system": false,
+      "type": "bool"
+    },
+    {
+      "help": "",
+      "hidden": false,
+      "id": "bool2605256118",
+      "name": "banned",
+      "presentable": false,
+      "required": false,
+      "system": false,
+      "type": "bool"
+    },
+    {
+      "help": "",
+      "hidden": false,
+      "id": "bool4147359063",
+      "name": "shadowbanned",
+      "presentable": false,
+      "required": false,
+      "system": false,
+      "type": "bool"
+    },
+    {
+      "help": "",
+      "hidden": false,
+      "id": "date826969888",
+      "max": "",
+      "min": "",
+      "name": "suspended_until",
+      "presentable": false,
+      "required": false,
+      "system": false,
+      "type": "date"
+    },
+    {
+      "help": "",
+      "hidden": false,
+      "id": "number662471717",
+      "max": null,
+      "min": 0,
+      "name": "violation_count",
+      "onlyInt": true,
+      "presentable": false,
+      "required": false,
+      "system": false,
+      "type": "number"
+    },
+    {
+      "autogeneratePattern": "",
+      "help": "",
+      "hidden": false,
+      "id": "text3875941284",
+      "max": 500,
+      "min": 0,
+      "name": "ban_reason",
+      "pattern": "",
+      "presentable": false,
+      "primaryKey": false,
+      "required": false,
+      "system": false,
+      "type": "text"
+    },
+    {
+      "autogeneratePattern": "",
+      "help": "",
+      "hidden": false,
+      "id": "text3408347291",
+      "max": 64,
+      "min": 0,
+      "name": "last_ip",
+      "pattern": "",
+      "presentable": false,
+      "primaryKey": false,
+      "required": false,
+      "system": false,
+      "type": "text"
+    },
+    {
+      "autogeneratePattern": "",
+      "help": "",
+      "hidden": false,
+      "id": "text2300189658",
+      "max": 128,
+      "min": 0,
+      "name": "last_device_key",
+      "pattern": "",
+      "presentable": false,
+      "primaryKey": false,
+      "required": false,
+      "system": false,
+      "type": "text"
+    },
+    {
+      "help": "",
+      "hidden": false,
+      "id": "bool3292153625",
+      "name": "is_private",
+      "presentable": false,
+      "required": false,
+      "system": false,
+      "type": "bool"
+    },
+    {
+      "help": "",
+      "hidden": false,
+      "id": "select1670918818",
+      "maxSelect": 1,
+      "name": "followers_visibility",
+      "presentable": false,
+      "required": false,
+      "system": false,
+      "type": "select",
+      "values": [
+        "anyone",
+        "followers"
+      ]
+    },
+    {
+      "help": "",
+      "hidden": false,
+      "id": "select1758358061",
+      "maxSelect": 1,
+      "name": "following_visibility",
+      "presentable": false,
+      "required": false,
+      "system": false,
+      "type": "select",
+      "values": [
+        "anyone",
+        "followers"
+      ]
+    },
+    {
+      "help": "",
+      "hidden": false,
+      "id": "number2564065015",
+      "max": null,
+      "min": 0,
+      "name": "followers_count",
+      "onlyInt": true,
+      "presentable": false,
+      "required": false,
+      "system": false,
+      "type": "number"
+    },
+    {
+      "help": "",
+      "hidden": false,
+      "id": "number3328567642",
+      "max": null,
+      "min": 0,
+      "name": "following_count",
+      "onlyInt": true,
+      "presentable": false,
+      "required": false,
+      "system": false,
+      "type": "number"
+    },
+    {
+      "help": "",
+      "hidden": false,
+      "id": "select3343321666",
+      "maxSelect": 1,
+      "name": "gender",
+      "presentable": false,
+      "required": false,
+      "system": false,
+      "type": "select",
+      "values": [
+        "male",
+        "female",
+        "non_binary",
+        "other"
+      ]
+    },
+    {
+      "help": "",
+      "hidden": false,
+      "id": "date1089581607",
+      "max": "",
+      "min": "",
+      "name": "date_of_birth",
+      "presentable": false,
+      "required": false,
+      "system": false,
+      "type": "date"
+    },
+    {
+      "help": "",
+      "hidden": false,
+      "id": "bool3746794887",
+      "name": "show_own_posts_in_feed",
+      "presentable": false,
+      "required": false,
+      "system": false,
+      "type": "bool"
+    }
+  ],
+  "indexes": [
+    "CREATE UNIQUE INDEX IF NOT EXISTS idx_users_username ON users (username)",
+    "CREATE UNIQUE INDEX `idx_tokenKey__pb_users_auth_` ON `users` (`tokenKey`)",
+    "CREATE UNIQUE INDEX `idx_email__pb_users_auth_` ON `users` (`email`) WHERE `email` != ''"
+  ],
+  "created": "2026-09-29 04:02:46.740Z",
+  "updated": "2026-10-06 08:57:19.948Z",
+  "system": false,
+  "authRule": "",
+  "manageRule": null,
+  "authAlert": {
+    "enabled": true,
+    "emailTemplate": {
+      "subject": "Login from a new location",
+      "body": "<p>Hello,</p>\n<p>We noticed a login to your {APP_NAME} account from a new location:</p>\n<p><em>{ALERT_INFO}</em></p>\n<p><strong>If this wasn't you, you should immediately change your {APP_NAME} account password to revoke access from all other locations.</strong></p>\n<p>If this was you, you may disregard this email.</p>\n<p>\n  Thanks,<br/>\n  {APP_NAME} team\n</p>"
+    }
+  },
+  "oauth2": {
+    "providers": [],
+    "mappedFields": {
+      "id": "",
+      "name": "name",
+      "username": "",
+      "avatarURL": "avatar"
+    },
+    "enabled": false
+  },
+  "passwordAuth": {
+    "enabled": true,
+    "identityFields": [
+      "email",
+      "username"
+    ]
+  },
+  "mfa": {
+    "enabled": false,
+    "duration": 600,
+    "rule": ""
+  },
+  "otp": {
+    "enabled": false,
+    "duration": 180,
+    "length": 8,
+    "emailTemplate": {
+      "subject": "OTP for {APP_NAME}",
+      "body": "<p>Hello,</p>\n<p>Your one-time password is: <strong>{OTP}</strong></p>\n<p><i>If you didn't ask for the one-time password, you can ignore this email.</i></p>\n<p>\n  Thanks,<br/>\n  {APP_NAME} team\n</p>"
+    }
+  },
+  "authToken": {
+    "duration": 432000
+  },
+  "passwordResetToken": {
+    "duration": 1800
+  },
+  "emailChangeToken": {
+    "duration": 1800
+  },
+  "verificationToken": {
+    "duration": 86400
+  },
+  "fileToken": {
+    "duration": 180
+  },
+  "verificationTemplate": {
+    "subject": "Verify your besocio email",
+    "body": "<!DOCTYPE html><html><body style=\"margin:0;padding:0;background:#f4f6f8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#0f172a;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#f4f6f8;padding:32px 12px;\"><tr><td align=\"center\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:520px;background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;\"><tr><td style=\"padding:28px 28px 8px 28px;\"><div style=\"font-size:22px;font-weight:700;letter-spacing:-0.02em;color:#0f6b4c;\">besocio</div></td></tr><tr><td style=\"padding:8px 28px 24px 28px;\"><p style=\"margin:0 0 12px 0;font-size:16px;line-height:1.5;\">Hi,</p><p style=\"margin:0 0 20px 0;font-size:15px;line-height:1.55;color:#334155;\">Thanks for joining besocio. Confirm your email to finish setting up your account.</p><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border:1px solid #e2e8f0;border-radius:10px;\"><tr><td style=\"padding:20px;text-align:center;\"><p style=\"margin:0 0 16px 0;font-size:14px;font-weight:600;color:#0f172a;\">Confirm your email address</p><a href=\"{APP_URL}/verify?token={TOKEN}\" style=\"display:inline-block;background:#0f6b4c;color:#ffffff;text-decoration:none;font-size:15px;font-weight:600;padding:12px 22px;border-radius:8px;\">Verify email</a></td></tr><tr><td style=\"padding:0 20px 18px 20px;border-top:1px solid #e2e8f0;\"><p style=\"margin:16px 0 6px 0;font-size:12px;line-height:1.5;color:#64748b;\">If the button doesn't work, copy and paste this link into your browser:</p><p style=\"margin:0;font-size:12px;line-height:1.5;word-break:break-all;\"><a href=\"{APP_URL}/verify?token={TOKEN}\" style=\"color:#0f6b4c;text-decoration:underline;\">{APP_URL}/verify?token={TOKEN}</a></p></td></tr></table><p style=\"margin:20px 0 0 0;font-size:12px;line-height:1.5;color:#94a3b8;\">If you didn't request this, you can ignore this email.</p></td></tr></table></td></tr></table></body></html>"
+  },
+  "resetPasswordTemplate": {
+    "subject": "Reset your besocio password",
+    "body": "<!DOCTYPE html><html><body style=\"margin:0;padding:0;background:#f4f6f8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#0f172a;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#f4f6f8;padding:32px 12px;\"><tr><td align=\"center\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:520px;background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;\"><tr><td style=\"padding:28px 28px 8px 28px;\"><div style=\"font-size:22px;font-weight:700;letter-spacing:-0.02em;color:#0f6b4c;\">besocio</div></td></tr><tr><td style=\"padding:8px 28px 24px 28px;\"><p style=\"margin:0 0 12px 0;font-size:16px;line-height:1.5;\">Hi,</p><p style=\"margin:0 0 20px 0;font-size:15px;line-height:1.55;color:#334155;\">We received a request to reset the password for your besocio account. Use the button below to choose a new password.</p><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border:1px solid #e2e8f0;border-radius:10px;\"><tr><td style=\"padding:20px;text-align:center;\"><p style=\"margin:0 0 16px 0;font-size:14px;font-weight:600;color:#0f172a;\">Password reset</p><a href=\"{APP_URL}/reset-password?token={TOKEN}\" style=\"display:inline-block;background:#0f6b4c;color:#ffffff;text-decoration:none;font-size:15px;font-weight:600;padding:12px 22px;border-radius:8px;\">Reset password</a></td></tr><tr><td style=\"padding:0 20px 18px 20px;border-top:1px solid #e2e8f0;\"><p style=\"margin:16px 0 6px 0;font-size:12px;line-height:1.5;color:#64748b;\">If the button doesn't work, copy and paste this link into your browser:</p><p style=\"margin:0;font-size:12px;line-height:1.5;word-break:break-all;\"><a href=\"{APP_URL}/reset-password?token={TOKEN}\" style=\"color:#0f6b4c;text-decoration:underline;\">{APP_URL}/reset-password?token={TOKEN}</a></p></td></tr></table><p style=\"margin:20px 0 0 0;font-size:12px;line-height:1.5;color:#94a3b8;\">If you didn't request this, you can ignore this email.</p></td></tr></table></td></tr></table></body></html>"
+  },
+  "confirmEmailChangeTemplate": {
+    "subject": "Confirm your {APP_NAME} new email address",
+    "body": "<p>Hello,</p>\n<p>Click on the button below to confirm your new email address.</p>\n<p>\n  <a class=\"btn\" href=\"{APP_URL}/_/#/auth/confirm-email-change/{TOKEN}\" target=\"_blank\" rel=\"noopener\">Confirm new email</a>\n</p>\n<p><i>If you didn't ask to change your email address, please ignore this email.</i></p>\n<p>\n  Thanks,<br/>\n  {APP_NAME} team\n</p>"
+  }
+}
