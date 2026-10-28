@@ -8,6 +8,8 @@ body:
       value: |
         Describe the bug with enough detail that someone else can reproduce it without a follow-up.
 
+        Security bugs do not belong here. Report them at https://github.com/besocio/issues/security/advisories/new so the report stays private until a fix is published.
+
   - type: dropdown
     id: area
     attributes:
