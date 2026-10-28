@@ -1,0 +1,95 @@
+name: Issue
+description: Report a bug, request a change, or file a task for besocio
+title: "[Area]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for besocio bugs, changes, and tasks. Include enough detail that someone else can reproduce or act on it without a follow-up.
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      description: What kind of issue is this?
+      options:
+        - Bug
+        - Feature
+        - Task
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of besocio does this affect?
+      options:
+        - Auth
+        - Profile
+        - Feed
+        - Social graph
+        - Privacy
+        - Moderation
+        - Notifications
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is wrong, missing, or needed?
+      placeholder: A short description of the problem or the change you want.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: For bugs, list the exact steps. For features and tasks, describe the current behavior if there is one.
+      placeholder: |
+        1. Go to …
+        2. Do …
+        3. See …
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should happen instead?
+      placeholder: Describe the outcome you expect.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happens today? Skip this for a new feature that does not exist yet.
+      placeholder: Describe what you see, including any error text.
+    validations:
+      required: false
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Where you saw this. App version, browser or device, and account type if it matters.
+      placeholder: Web, Chrome 131, production
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Extra context
+      description: Screenshots, logs, related tickets, or anything else that helps. Do not include passwords, tokens, or private user data.
+      placeholder: Links, error messages, or notes.
+    validations:
+      required: false
