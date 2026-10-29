@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Describe the change you want with enough detail that someone else can act on it without a follow-up.
+        Describe the change you want, who it is for, and how you would know it works.
 
   - type: dropdown
     id: area
@@ -25,50 +25,29 @@ body:
       required: true
 
   - type: textarea
-    id: summary
+    id: problem
     attributes:
-      label: Summary
-      description: What is missing or needed?
-      placeholder: A short description of the change you want.
+      label: Problem
+      description: What is missing or painful today, and who runs into it?
+      placeholder: People cannot …
     validations:
       required: true
 
   - type: textarea
-    id: steps
+    id: proposal
     attributes:
-      label: Steps to reproduce
-      description: Describe the current behavior if there is one.
-      placeholder: |
-        1. Go to …
-        2. Do …
-        3. See …
-    validations:
-      required: false
-
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected behavior
-      description: What should happen?
-      placeholder: Describe the outcome you expect.
+      label: Proposed change
+      description: What should besocio do differently?
+      placeholder: Add or change …
     validations:
       required: true
 
   - type: textarea
-    id: actual
+    id: alternatives
     attributes:
-      label: Actual behavior
-      description: What happens today? Skip this if the behavior does not exist yet.
-      placeholder: Describe what you see, including any error text.
-    validations:
-      required: false
-
-  - type: input
-    id: environment
-    attributes:
-      label: Environment
-      description: Where you saw this. App version, browser or device, and account type if it matters.
-      placeholder: Web, Chrome 131, production
+      label: Alternatives
+      description: Other ways this could be solved, and why you prefer this one.
+      placeholder: We could also …
     validations:
       required: false
 
@@ -76,7 +55,7 @@ body:
     id: context
     attributes:
       label: Extra context
-      description: Screenshots, logs, related tickets, or anything else that helps. Do not include passwords, tokens, or private user data.
-      placeholder: Links, error messages, or notes.
+      description: Mockups, examples, or related tickets. Do not include passwords, tokens, or private user data.
+      placeholder: Links or notes.
     validations:
       required: false

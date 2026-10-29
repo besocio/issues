@@ -31,7 +31,7 @@ body:
     id: summary
     attributes:
       label: Summary
-      description: What is wrong?
+      description: What is broken?
       placeholder: A short description of the problem.
     validations:
       required: true
@@ -40,13 +40,13 @@ body:
     id: steps
     attributes:
       label: Steps to reproduce
-      description: List the exact steps.
+      description: List the exact steps that trigger the bug.
       placeholder: |
         1. Go to …
         2. Do …
         3. See …
     validations:
-      required: false
+      required: true
 
   - type: textarea
     id: expected
@@ -61,10 +61,10 @@ body:
     id: actual
     attributes:
       label: Actual behavior
-      description: What happens today?
-      placeholder: Describe what you see, including any error text.
+      description: What happens today? Include any error text.
+      placeholder: Describe what you see.
     validations:
-      required: false
+      required: true
 
   - type: input
     id: environment
@@ -79,7 +79,7 @@ body:
     id: context
     attributes:
       label: Extra context
-      description: Screenshots, logs, related tickets, or anything else that helps. Do not include passwords, tokens, or private user data.
+      description: Screenshots, logs, or related tickets. Do not include passwords, tokens, or private user data.
       placeholder: Links, error messages, or notes.
     validations:
       required: false
