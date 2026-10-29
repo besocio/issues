@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Describe the task with enough detail that someone else can act on it without a follow-up.
+        Describe the work, when it is done, and anything it depends on.
 
   - type: dropdown
     id: area
@@ -25,50 +25,29 @@ body:
       required: true
 
   - type: textarea
-    id: summary
+    id: work
     attributes:
-      label: Summary
+      label: Work
       description: What needs to be done?
-      placeholder: A short description of the task.
+      placeholder: Update, migrate, or check …
     validations:
       required: true
 
   - type: textarea
-    id: steps
+    id: done
     attributes:
-      label: Steps to reproduce
-      description: Describe the current behavior if there is one.
-      placeholder: |
-        1. Go to …
-        2. Do …
-        3. See …
-    validations:
-      required: false
-
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected behavior
-      description: What should happen when this is done?
-      placeholder: Describe the outcome you expect.
+      label: Done when
+      description: How will someone know this task is finished?
+      placeholder: This is done when …
     validations:
       required: true
 
   - type: textarea
-    id: actual
+    id: dependencies
     attributes:
-      label: Actual behavior
-      description: What happens today?
-      placeholder: Describe what you see, including any error text.
-    validations:
-      required: false
-
-  - type: input
-    id: environment
-    attributes:
-      label: Environment
-      description: Where you saw this. App version, browser or device, and account type if it matters.
-      placeholder: Web, Chrome 131, production
+      label: Dependencies
+      description: Related issues, blockers, or work that has to happen first.
+      placeholder: Blocked by #…
     validations:
       required: false
 
@@ -76,7 +55,7 @@ body:
     id: context
     attributes:
       label: Extra context
-      description: Screenshots, logs, related tickets, or anything else that helps. Do not include passwords, tokens, or private user data.
-      placeholder: Links, error messages, or notes.
+      description: Links or notes that help. Do not include passwords, tokens, or private user data.
+      placeholder: Links or notes.
     validations:
       required: false
